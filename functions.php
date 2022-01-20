@@ -5,7 +5,7 @@
     if(isset($_POST['submit'])){
         $name = trim(htmlentities($_POST['name']));
         $uname = trim(htmlentities($_POST['uname']));
-        $email = trim(htmlentities($_POST['email']));
+        $email = trim(htmlentities($_POST["email"]));
         $pass = $_POST['password'];
         $cpass = $_POST['cpassword'];
         $photo = $_FILES['pic'];
@@ -21,6 +21,9 @@
         }
         if(empty($email)){
             $error ['emailerr'] = "please enter your email!";
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error ['emvailderr'] = "Invalid email format";
         }
         if(empty($pass)){
             $error ['passerr'] = "please enter your password!";

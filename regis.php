@@ -47,6 +47,11 @@
                                     }
                                     ?>
                                     <?php
+                                    if (isset($error['emvailderr'])) {
+                                        echo "<p>" . $error['emvailderr'] . "</p>";
+                                    }
+                                    ?>
+                                    <?php
                                     if (isset($email_alrady)) {
                                         echo "<p>" . $email_alrady . "</p>";
                                     }
