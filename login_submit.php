@@ -2,12 +2,13 @@
 session_start();
 
 if(isset($_POST['login'])){
-    $email = trim(htmlentities($_POST['email']));
+    // $uname = trim(htmlentities($_POST['email']));
+    $uname = $email = trim(htmlentities($_POST['email']));
     $password = $_POST['password'];
     $ecpass = md5($password);
 
     require_once 'db.php';
-    $query = "SELECT id, name, email, password, photo, status FROM user WHERE email = '$email' AND password = '$ecpass' AND status='1'";
+    $query = "SELECT id, name, email, password, photo, status FROM user WHERE uname = '$uname' OR email = '$email' AND password = '$ecpass' AND status='1'";
     $result = mysqli_query($con, $query);
 
 

@@ -12,7 +12,7 @@ include "header.php";
                     <div class="card-body">
                         <form action="login_submit.php" class="form-control" method="POST">
                             <div class="col-md-10 mb-3 mt-3" style="margin:0 auto ;">
-                                <input type="Email" placeholder="Enter your Email address" name="email" class="form-control">
+                                <input type="text" placeholder="Enter your Email or User name address" name="email" class="form-control">
                             </div>
                             <div class="col-md-10 mb-3" style="margin:0 auto ;">
                                 <input type="password" placeholder="Enter your password" name="password" class="form-control">
